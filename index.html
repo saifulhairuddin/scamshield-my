@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ScamShield MY - an explainable scam risk-awareness assistant that analyses suspicious messages for common scam indicators." />
+  <title>ScamShield MY - Explainable Scam Risk Assistant</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#main" aria-label="ScamShield MY home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" role="img" focusable="false">
+            <path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z" opacity="0.18"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.5 11.8 2.3 2.3 4.7-4.9"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">ScamShield <span class="brand__my">MY</span></span>
+          <span class="brand__tagline">Explainable Scam Risk Assistant</span>
+        </span>
+      </a>
+      <div class="site-header__right">
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link is-active" href="#analyse" data-nav>Analyse</a></li>
+            <li><a class="site-nav__link" href="#history" data-nav>History</a></li>
+            <li><a class="site-nav__link" href="#about" data-nav>About</a></li>
+          </ul>
+        </nav>
+        <span class="status-pill" title="All analysis runs locally in your browser">
+          <span class="status-pill__dot" aria-hidden="true"></span>
+          Local Analysis
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="hero__badge">
+        <span class="hero__badge-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="13" height="13" role="img" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z"/>
+          </svg>
+        </span>
+        Scam Risk Intelligence &bull; Malaysia
+      </p>
+      <h1 id="hero-heading" class="hero__headline">Think Before You Trust.</h1>
+      <p class="hero__supporting">Analyse suspicious messages and understand the warning signs before you act.</p>
+      <ul class="hero__trust" aria-label="Product highlights">
+        <li><span class="hero__trust-check" aria-hidden="true">&check;</span> Private</li>
+        <li><span class="hero__trust-check" aria-hidden="true">&check;</span> Local Analysis</li>
+        <li><span class="hero__trust-check" aria-hidden="true">&check;</span> Explainable Results</li>
+      </ul>
+    </section>
+
+    <section id="analyse" class="panel analysis" aria-labelledby="analyse-heading">
+      <p class="section-label">
+        <span class="section-label__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" role="img" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M8 11h8"/>
+          </svg>
+        </span>
+        Message Analysis
+      </p>
+      <h2 id="analyse-heading" class="panel__title">Analyse a message</h2>
+      <p class="panel__hint">Paste any message you are unsure about. ScamShield MY scans it for common scam warning signs and explains what it finds.</p>
+
+      <form class="analysis__form" novalidate>
+        <div class="field__labelrow">
+          <label class="field__label" for="message-input">Suspicious message</label>
+          <span class="channel-hint" aria-hidden="true">Paste SMS &bull; WhatsApp &bull; Email</span>
+        </div>
+        <textarea id="message-input" class="analysis__textarea" name="message" rows="8" maxlength="5000" placeholder="e.g. URGENT! Akaun bank anda akan disekat. Please verify immediately melalui link berikut..." aria-describedby="char-counter"></textarea>
+
+        <div class="analysis__meta">
+          <span id="char-counter" class="char-counter" aria-live="polite">0 / 5000</span>
+        </div>
+
+        <div class="analysis__actions">
+          <button type="submit" id="analyse-btn" class="btn btn--primary">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" role="img" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z"/>
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.5 11.8 2.3 2.3 4.7-4.9"/>
+              </svg>
+            </span>
+            Analyse Message
+          </button>
+          <button type="button" id="clear-btn" class="btn btn--ghost">Clear</button>
+          <div class="sample-control">
+            <button type="button" id="sample-btn" class="btn btn--ghost" aria-haspopup="true" aria-expanded="false" aria-controls="sample-menu">Sample Message</button>
+            <ul id="sample-menu" class="sample-menu" role="menu" aria-label="Sample messages" hidden>
+              <li role="none"><button type="button" role="menuitem" class="sample-menu__item" disabled>Samples available in a later step</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <p id="input-feedback" class="input-feedback" role="alert" aria-live="assertive"></p>
+
+        <ul class="info-strip" aria-label="What ScamShield MY checks">
+          <li class="info-strip__item"><span class="info-strip__value">8</span><span class="info-strip__label">Risk Indicators</span></li>
+          <li class="info-strip__item"><span class="info-strip__value">BM + English</span><span class="info-strip__label">Language Support</span></li>
+          <li class="info-strip__item"><span class="info-strip__value">Explainable</span><span class="info-strip__label">Transparent Scoring</span></li>
+        </ul>
+      </form>
+    </section>
+
+    <section id="threat-assessment" class="panel result-section" aria-labelledby="threat-heading" hidden>
+      <h2 id="threat-heading" class="panel__title">Threat Assessment</h2>
+      <div class="placeholder" data-placeholder>Your risk level, risk score, and number of detected indicators will appear here after analysis.</div>
+    </section>
+
+    <section id="indicators" class="panel result-section" aria-labelledby="indicators-heading" hidden>
+      <h2 id="indicators-heading" class="panel__title">Detected Risk Indicators</h2>
+      <div class="placeholder" data-placeholder>Each detected indicator will be explained here as a security finding.</div>
+    </section>
+
+    <section id="recommendations" class="panel result-section" aria-labelledby="recommendations-heading" hidden>
+      <h2 id="recommendations-heading" class="panel__title">Recommended Safety Actions</h2>
+      <div class="placeholder" data-placeholder>Practical safety recommendations will appear here based on what is detected.</div>
+    </section>
+
+    <section id="history" class="panel panel--soft history" aria-labelledby="history-heading">
+      <div class="panel__head">
+        <h2 id="history-heading" class="panel__title panel__title--sm">Analysis History</h2>
+        <button type="button" id="clear-history-btn" class="btn btn--ghost btn--sm" disabled>Clear History</button>
+      </div>
+      <div class="empty-state" data-placeholder>
+        <p class="empty-state__title">No analyses yet</p>
+        <p class="empty-state__text">Your recent message assessments will appear here.</p>
+      </div>
+    </section>
+
+    <section id="about" class="trust-notice" aria-labelledby="about-heading">
+      <span class="trust-notice__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" role="img" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5l-8-3Z"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 8v4m0 3h.01"/>
+        </svg>
+      </span>
+      <div class="trust-notice__body">
+        <h2 id="about-heading" class="trust-notice__title">Built for Awareness, Not Certainty</h2>
+        <p class="trust-notice__text">ScamShield MY identifies common scam risk indicators to support user awareness. A risk score does not prove that a message is fraudulent. Always verify suspicious requests through official channels.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>ScamShield MY - a risk-awareness tool, not a definitive scam detection service.</p>
+    </div>
+  </footer>
+
+  <script src="js/rules.js?v=phase4-1"></script>
+  <script src="js/app.js?v=phase4-1"></script>
+</body>
+</html>
